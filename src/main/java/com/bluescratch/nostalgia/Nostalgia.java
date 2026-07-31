@@ -1,5 +1,7 @@
 package com.bluescratch.nostalgia;
 
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -30,6 +32,8 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Optional;
+
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Nostalgia.MODID)
@@ -50,6 +54,8 @@ public class Nostalgia {
         // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+
+
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -78,5 +84,11 @@ public class Nostalgia {
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath("nostalgia", "brick_pyramid");
+
+        Optional<StructureTemplate> template =
+                event.getServer().getStructureManager().get(id);
+
+        LOGGER.info("Loaded: {}", template.isPresent());
     }
 }
