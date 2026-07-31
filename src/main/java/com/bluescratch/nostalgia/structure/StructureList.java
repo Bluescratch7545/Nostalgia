@@ -2,7 +2,10 @@ package com.bluescratch.nostalgia.structure;
 
 public enum StructureList {
     BRICK_PYRAMID("brick_pyramid"),
-    MOSS_STONE_BLOCK("moss_stone_block");
+    MOSS_STONE_BLOCK("moss_stone_block"),
+    HOUSE("house"),
+    NETHER_HOUSE("nether_house"),
+    SHRINE("shrine");
 
     private final String id;
 

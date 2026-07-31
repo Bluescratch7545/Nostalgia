@@ -17,7 +17,13 @@ public class NostalgiaProgression {
         if (days < 49) {
             return 0.15f;
         }
+        if (days < 100) {
+            return 0.25f;
+        }
 
-        return 0.25f;
+
+        // HOW DO YOU EVEN REACH THIS AMOUNT OF DAYS IN **THIS** MOD??
+        // I give up I won't even ask how.
+        return 1.0f;
     }
 }
