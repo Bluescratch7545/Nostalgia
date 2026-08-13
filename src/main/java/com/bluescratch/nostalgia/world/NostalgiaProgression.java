@@ -21,9 +21,6 @@ public class NostalgiaProgression {
             return 0.25f;
         }
 
-
-        // HOW DO YOU EVEN REACH THIS AMOUNT OF DAYS IN **THIS** MOD??
-        // I give up I won't even ask how.
         return 1.0f;
     }
 }

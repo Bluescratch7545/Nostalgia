@@ -1,10 +1,10 @@
 package com.bluescratch.nostalgia.event;
 
 import com.bluescratch.nostalgia.Nostalgia;
-import com.bluescratch.nostalgia.client.model.TestEntityModel;
 import com.bluescratch.nostalgia.registries.ModEntities;
-import com.bluescratch.nostalgia.client.renderer.TestEntityRenderer;
 
+import com.bluescratch.nostalgia.registries.entity.client.renderer.CorruptSteveRenderer;
+import com.bluescratch.nostalgia.registries.entity.client.renderer.TestEntityTwoRenderer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -16,16 +16,20 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(
-                ModEntities.TEST_ENTITY.get(),
-                TestEntityRenderer::new
+                ModEntities.TEST_ENTITY_TWO.get(),
+                TestEntityTwoRenderer::new
         );
-    }
-
-    @SubscribeEvent
-    public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.registerLayerDefinition(
-                TestEntityModel.LAYER_LOCATION,
-                TestEntityModel::createBodyLayer
+        event.registerEntityRenderer(
+                ModEntities.CORRUPT_STEVE.get(),
+                CorruptSteveRenderer::new
+        );
+        event.registerEntityRenderer(
+                ModEntities.CORRUPT_STEVE_STALK.get(),
+                CorruptSteveRenderer::new
+        );
+        event.registerEntityRenderer(
+                ModEntities.CORRUPT_STEVE_CHASE.get(),
+                CorruptSteveRenderer::new
         );
     }
 }
