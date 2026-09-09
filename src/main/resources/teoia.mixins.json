@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.bluescratch.endofitall.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "EndOfItAll$PlayerList",
+    "EndOfItAll$KickCommand",
+    "EndOfItAll$KillCommand",
+    "EndOfItAll$DeopCommand",
+    "EndOfItAll$GiveCommand",
+    "EndOfItAll$PlayerInfo"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "entity.teoia.structure_spawner": "Test Entity Two",
+  "entity.teoia.static": "15 8",
+  "entity.teoia.silence": "Emptiness",
+  "command.kick.guest": "Cannot kick someone who isnt in the world.",
+  "command.kill.guest": "Nothing happened. You feel proud now?",
+  "command.deop.guest": "ERROR.OWNER.WORLD (Is it just a dream?)",
+  "command.give.guest": "Cannot give an item to a player who doesnt exist"
+}

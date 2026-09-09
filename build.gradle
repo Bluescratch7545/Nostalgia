@@ -32,6 +32,14 @@ repositories {
         name = "GeckoLib"
         url = "https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/"
     }
+    maven {
+        name = "KotlinForForge"
+        url = "https://thedarkcolour.github.io/KotlinForForge/"
+    }
+    maven {
+        name = "FzzyMaven"
+        url = uri("https://maven.fzzyhmstrs.me/")
+    }
 }
 
 base {
@@ -121,6 +129,7 @@ configurations {
 }
 
 dependencies {
+    implementation "me.fzzyhmstrs:fzzy_config:0.7.6+1.21+neoforge"
     implementation "software.bernie.geckolib:geckolib-neoforge-1.21.1:4.9.2"
 }
 
